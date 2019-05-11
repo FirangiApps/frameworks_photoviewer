@@ -8,6 +8,16 @@ android {
         java.srcDirs = ['src', 'appcompat/src']
         res.srcDirs = ['res', 'appcompat/res']
     }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+    compileSdkVersion = 28
+    buildToolsVersion = '28.0.3'
+    defaultConfig {
+        minSdkVersion '23'
+        targetSdkVersion '28'
+    }
 }
 
 dependencies {
