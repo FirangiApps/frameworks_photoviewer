@@ -1,5 +1,15 @@
 import org.gradle.api.artifacts.Dependency;
 
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.3.2'
+    }
+}
 apply plugin: 'com.android.library'
 
 android {
@@ -21,8 +31,13 @@ android {
 }
 
 dependencies {
-    compile findDependency(':support-v4', 'com.android.support:support-v4:23.3.+')
-    compile findDependency(':support-appcompat-v7', 'com.android.support:appcompat-v7:23.3.+')
+    implementation findDependency(':support-v4', 'com.android.support:support-v4:23.3.+')
+    implementation findDependency(':support-appcompat-v7', 'com.android.support:appcompat-v7:26.0.0-beta1')
+}
+repositories {
+    mavenCentral()
+    jcenter()
+    google()
 }
 
 Dependency findDependency(String projectName, String moduleName) {
